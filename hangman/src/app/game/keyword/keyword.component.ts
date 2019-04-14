@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HangmanService } from 'src/app/services/hangman-service.service';
+import { CurrentGameService } from 'src/app/services/current-game.service';
 
 @Component({
   selector: 'app-keyword',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KeywordComponent implements OnInit {
 
-  constructor() { }
+  hangmanService : HangmanService
+  currentGameService : CurrentGameService
+  constructor(private hs : HangmanService, private cgs : CurrentGameService) {
+      this.hangmanService = hs;
+      this.currentGameService = cgs;
+   }
 
   ngOnInit() {
   }
