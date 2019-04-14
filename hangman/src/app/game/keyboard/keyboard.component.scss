@@ -5,9 +5,11 @@
 .correct {
     background: green;
     cursor: not-allowed;
+    pointer-events: none;
 }
 
 .incorrect {
     background-color: red;
     cursor: not-allowed;
+    pointer-events: none;
 }
