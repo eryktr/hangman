@@ -8,7 +8,9 @@ export class CurrentGameService {
 
   started : Boolean
   currentWord : HangmanWord
-  guessArray : Array<string> = []
+  guessArray : Array<string>
+
+  usedLetters : Array<string>
 
   constructor() {
 
@@ -16,6 +18,8 @@ export class CurrentGameService {
 
   setWord(word : HangmanWord) {
     this.currentWord = word
+    this.guessArray = []
+    this.usedLetters = []
     for (let c of this.currentWord.word) {
       this.guessArray.push("_")
     }
@@ -23,5 +27,14 @@ export class CurrentGameService {
     this.started = true
   }
   
-  
+  guessLetter(letter : string) {
+    if (this.currentWord.word.includes(letter)) {
+      this.guessArray.forEach((v, i, a) => {
+        if (this.currentWord.word[i] == letter) {
+          a[i] = letter;
+        }
+      })
+      console.log(this.guessArray); 
+    }
+  }
 }

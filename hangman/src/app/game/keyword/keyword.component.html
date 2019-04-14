@@ -1,3 +1,12 @@
-<p>
-  <span class="letter" *ngFor="let c of this.cgs.guessArray">{{c}}  </span>
-<p>
+<div class="container-fluid">
+  <div class="row">
+    <span class="letter" *ngFor="let c of this.cgs.guessArray">{{c}}     </span>
+  </div>
+
+  <div class="row">
+    <span class="category" [class.visible]="this.cgs.started">Category: {{this.cgs.currentWord.category}}</span>
+  </div>
+  </div>
+
+
+
