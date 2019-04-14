@@ -14,14 +14,13 @@ export class GameComponent implements OnInit {
     
   }
 
-  startNewGame(word : HangmanWord) {
+  startNewGame() {
     let randomWord : HangmanWord = this.hangmanService.getRandomWord()
-    this.currentGameService.setWord(word)
+    this.currentGameService.setWord(randomWord)
   }
 
-
-  
   ngOnInit() {
+    
   }
 
 }

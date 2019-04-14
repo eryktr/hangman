@@ -6,9 +6,9 @@ import { HangmanWord, HangmanService } from './hangman-service.service';
 })
 export class CurrentGameService {
 
-  private started : Boolean
-  private currentWord : HangmanWord
-  private guessArray : Array<string>
+  started : Boolean
+  currentWord : HangmanWord
+  guessArray : Array<string> = []
 
   constructor() {
 
@@ -19,6 +19,7 @@ export class CurrentGameService {
     for (let c of this.currentWord.word) {
       this.guessArray.push("_")
     }
+    console.log(this.guessArray)
     this.started = true
   }
   

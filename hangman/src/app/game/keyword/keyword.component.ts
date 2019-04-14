@@ -9,12 +9,9 @@ import { CurrentGameService } from 'src/app/services/current-game.service';
 })
 export class KeywordComponent implements OnInit {
 
-  hangmanService : HangmanService
-  currentGameService : CurrentGameService
-  constructor(private hs : HangmanService, private cgs : CurrentGameService) {
-      this.hangmanService = hs;
-      this.currentGameService = cgs;
-   }
+  constructor(private cgs : CurrentGameService) {
+    
+  }
 
   ngOnInit() {
   }
