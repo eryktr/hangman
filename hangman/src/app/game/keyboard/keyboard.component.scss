@@ -2,3 +2,12 @@
     width: 7%;
     margin: 0.3%;
 }
+.correct {
+    background: green;
+    cursor: not-allowed;
+}
+
+.incorrect {
+    background-color: red;
+    cursor: not-allowed;
+}

@@ -1,8 +1,12 @@
 <div class="container-fluid">
   <div class="row">
-    <button class="keyboard-btn btn-primary" *ngFor="let item of lettersRowOne" (click)="cgs.guessLetter(item)">{{item}}</button>
+    <button class="keyboard-btn btn-primary" *ngFor="let item of lettersRowOne" 
+    (click)="cgs.guessLetter(item)" id="{{item}}"
+    [ngClass]="{'correct':cgs.letterGuessed(item), 'incorrect':cgs.letterFailed(item)}">{{item}}</button>
   </div>
   <div class="row">
-    <button class="keyboard-btn btn-primary" *ngFor="let item of lettersRowTwo" (click)="cgs.guessLetter(item)">{{item}}</button>
+    <button class="keyboard-btn btn-primary" *ngFor="let item of lettersRowTwo"
+     (click)="cgs.guessLetter(item)" id="{{item}}"
+     [ngClass]="{'correct':cgs.letterGuessed(item), 'incorrect':cgs.letterFailed(item)}">{{item}}</button>
   </div>
 </div>
