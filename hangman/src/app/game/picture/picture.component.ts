@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentGameService } from 'src/app/services/current-game.service';
 
 @Component({
   selector: 'app-picture',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PictureComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cgs : CurrentGameService) { }
 
   ngOnInit() {
   }

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HangmanWord, HangmanService } from './hangman-service.service';
-import { containsTree } from '@angular/router/src/url_tree';
-import {$} from 'jquery/dist/jquery.min.js'
+import { HangmanWord } from './hangman-service.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,9 +9,14 @@ export class CurrentGameService {
   started : Boolean
   currentWord : HangmanWord
   guessArray : Array<string>
+  
+  images : Array<string> = ["img/hm0.jpg","img/hm1.jpg", "img/hm2.jpg", "img/hm3.jpg", "img/hm4.jpg", "img/hm5.jpg", "img/hm6.jpg", "img/hm7.jpg", "img/hm8.jpg"]
+  currentImage : string
 
   usedLetters : Array<string>
   contains : Map<string, boolean>
+
+  remainingLives : number
 
   constructor() {
 
@@ -23,6 +27,10 @@ export class CurrentGameService {
     this.guessArray = []
     this.usedLetters = []
     this.contains = new Map<string, boolean>()
+    this.remainingLives = 8;
+
+    this.currentImage = this.images[0]
+    
     for (let c of this.currentWord.word) {
       this.guessArray.push("_")
     }
